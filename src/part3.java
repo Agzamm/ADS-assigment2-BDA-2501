@@ -116,11 +116,16 @@ class part3 {
         int choice;
 
         do {
-            System.out.println("\n1-Bank 2-ATM 3-Admin 4-Exit");
+            System.out.println("1-Bank");
+            System.out.println("2-ATM");
+            System.out.println("3-Admin");
+            System.out.println("4-Exit");
             choice = sc.nextInt();
 
             if (choice == 1) {
-                System.out.println("1-Request 2-Deposit 3-Withdraw");
+                System.out.println("1-Request");
+                System.out.println("2-Deposit");
+                System.out.println("3-Withdraw");
                 int b = sc.nextInt();
 
                 if (b == 1) {

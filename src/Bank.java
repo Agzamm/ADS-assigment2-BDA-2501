@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 class BankAccount {
-    int accountNumber;
+    int    accountNumber;
     String username;
     double balance;
 
@@ -16,7 +16,7 @@ class MyLinkedList {
 
     static class Node {
         BankAccount data;
-        Node next;
+        Node        next;
 
         Node(BankAccount data) {
             this.data = data;
@@ -50,7 +50,8 @@ class MyLinkedList {
         int  i       = 1;
         Node current = head;
         while (current != null) {
-            System.out.println(i + ". " + current.data.username + " - Balance: " + (int) current.data.balance);
+            System.out.println(i + ". " + current.data.username
+                    + " - Balance: " + (int) current.data.balance);
             i++;
             current = current.next;
         }
@@ -150,13 +151,14 @@ class MyQueue {
         front = rear = null;
     }
 
+    // enqueue: add bill to the back
     void enqueue(String bill) {
         Node newNode = new Node(bill);
         if (rear == null) {
             front = rear = newNode;
         } else {
             rear.next = newNode;
-            rear      = newNode;
+            rear = newNode;
         }
         System.out.println("Added: " + bill);
     }
@@ -176,7 +178,7 @@ class MyQueue {
         }
         System.out.println("Pending Bills:");
         Node current = front;
-        int  i       = 1;
+        int  i = 1;
         while (current != null) {
             System.out.println(i + ". " + current.data);
             i++;
@@ -193,7 +195,7 @@ class AccountQueue {
 
     class Node {
         BankAccount data;
-        Node        next;
+        Node next;
 
         Node(BankAccount data) {
             this.data = data;
@@ -229,8 +231,7 @@ class AccountQueue {
         if (front == null) rear = null;
 
         accounts.addAccount(approved.accountNumber, approved.username, approved.balance);
-        System.out.println("Approved and added: " + approved.username
-                + " - Balance: " + (int) approved.balance);
+        System.out.println("Approved and added: " + approved.username + " - Balance: " + (int) approved.balance);
     }
 
     void displayPending() {
@@ -240,7 +241,7 @@ class AccountQueue {
         }
         System.out.println("Pending Requests:");
         Node current = front;
-        int  i       = 1;
+        int i = 1;
         while (current != null) {
             System.out.println(i + ". " + current.data.username + " - Balance: " + (int) current.data.balance);
             i++;
@@ -342,6 +343,7 @@ public class Bank {
 
     static void historyMenu() {
         while (true) {
+            System.out.println("--- Transaction History ---");
             System.out.println("1. Show last transaction");
             System.out.println("2. Undo last transaction");
             System.out.println("0. Back");
@@ -395,7 +397,7 @@ public class Bank {
 
     static void accountQueueMenu() {
         while (true) {
-            System.out.println("--- Account Opening Queue ---");
+            System.out.println("--- Account Opening Queue (Admin) ---");
             System.out.println("1. Submit request");
             System.out.println("2. Process next request");
             System.out.println("3. Display pending");

@@ -76,8 +76,8 @@ class MyLinkedList {
 }
 
 class MyStack {
-    private int[] arr;
-    private int capacity;
+    private final int[] arr;
+    private final int capacity;
     private int top;
 
     public MyStack(int cap) {
@@ -117,7 +117,7 @@ class MyStack {
 
 class MyQueue {
 
-    class Node {
+    static class Node {
         int data;
         Node next;
 
